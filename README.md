@@ -59,16 +59,19 @@ The agents in the model have the following agent owned methods/procedures:
  
 **_Interaction Topology_**
 
-The interaction topology here will not exist within a spatial-dependent environment. Instead, it will act more along the lines of a genetic algorithm type of interaction environment, where agents are chosen at random and interact with each other.
+The interaction topology here will not exist within a spatial-dependent environment. Instead, it will act more along the lines of a genetic algorithm type of interaction environment, where agents are chosen at random and interact with each other. This will occur for every point in the environment.
  
 **_Action Sequence_**
 
 _What does an agent, cell, etc. do on a given turn? Provide a step-by-step description of what happens on a given turn for each part of your model_
 
-1. 'n' number of agents are randomly selected from the population.
-2. Each agent interacts with the other selected agents, and cast their votes depending on their interaction rules.
-3. A vote is held between the selected agents.
-4. The winning of the vote determines how the preferences are updated for the next round (in the function and fuzy logic sets), as well as what the response surface looks like.
+1. A patch (point) is selected from the environment.
+2. 'n' number of agents are randomly selected from the population.
+3. Each agent interacts with the other selected agents, and cast their votes depending on their interaction rules.
+4. A vote is held between the selected agents.
+5. The winning of the vote determines how the preferences are updated for the next round (in the function and fuzy logic sets), as well as what the response surface looks like.
+
+This sequence is continued until every agent in the population has interacted with other agents and have casted a vote.
 
 &nbsp; 
 ### 4) Model Parameters and Initialization
@@ -76,12 +79,14 @@ _What does an agent, cell, etc. do on a given turn? Provide a step-by-step descr
 _Describe and list any global parameters you will be applying in your model:
 
 Number of agents: Defined by the number of each type of agent.
-Negotation
+Negotation rules: The rules for how votes will be handled.
 Fuzzy rule matrix: This is a pre-defined method for the rules activated when the negotiations have ocurred.
 
 _Describe how your model will be initialized_
 
 _Provide a high level, step-by-step description of your schedule during each "tick" of the model_
+
+(See **_Action Sequence_**)
 
 &nbsp; 
 
@@ -89,8 +94,15 @@ _Provide a high level, step-by-step description of your schedule during each "ti
 
 _What quantitative metrics and/or qualitative features will you use to assess your model outcomes?_
 
+* The shape of the design surface
+* The shape of the pareto front
+* Utopian point
+* Final trade-off values
+
 &nbsp; 
 
 ### 6) Parameter Sweep
 
 _What parameters are you most interested in sweeping through? What value ranges do you expect to look at for your analysis?_
+
+Sweeping through different numbers (and ratios) of each type of agent present.
