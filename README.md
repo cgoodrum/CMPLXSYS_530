@@ -31,11 +31,16 @@ The key micro-leel processes are the negotiations between the agents. The agents
 ****
 &nbsp; 
 ### 1) Environment
-_Description of the environment in your model. Things to specify *if they apply*:
 
-* _Dimensionality (e.g. 1D, 2D, etc.): The environment will consist of 2D points (acting as patches) which contain a single function value at that point.
-* _List of environment-owned variables (e.g. resources, states, roughness)_
-* _List of environment-owned methods/procedures (e.g. resource production, state change, etc.)_
+The environment will consist of 2D points (acting as patches) which contain a single function value at that point. This will be carried out for a grid of pre-determined size.
+
+The environment (patches, points) will contain the following variables:
+* function_val: Value of the function at that point.
+* design_surf_val: Value of the design function surface at that point.
+
+The environment will contain the following methods/sequences:
+* calc_function val: Calculate the function value at the point specified.
+* update_design_surface: Calculate the design function surface at that point (after the voting procedure).
 
 
 &nbsp; 
@@ -44,13 +49,11 @@ _Description of the environment in your model. Things to specify *if they apply*
  
  The agents in the model have the following agent owned variables:
  
-* _Type: The agent type, which will define which sort of agent it is (greedy, etc.)
-* _Interaction rules: Cases which define what happens when it meets an agent.
-* _
+* Type: The agent type, which will define which sort of agent it is (greedy, etc.)
+* Interaction rules: Cases which define what happens when it meets an agent (i.e. greedy_vs_greedy).
 
 The agents in the model have the following agent owned methods/procedures:
-
-* Interact
+* Vote: Will contain that agent's vote and preferences.
 
 
 &nbsp; 
@@ -83,6 +86,8 @@ Negotation rules: The rules for how votes will be handled.
 Fuzzy rule matrix: This is a pre-defined method for the rules activated when the negotiations have ocurred.
 
 _Describe how your model will be initialized_
+
+The model will be initialized by creating the patches and the entire grid surface, and calculating the function values on each patch. The agents will also be initialized (according to the numbers of each) with a baseline set of fuzzy logic rules. These rules will be updated at each tick.
 
 _Provide a high level, step-by-step description of your schedule during each "tick" of the model_
 
