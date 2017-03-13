@@ -1,4 +1,4 @@
-# Model Proposal for Fuzzy Logic Design Optimization
+# Model Proposal for Fuzzy Logic Design Optimization with Design Agents
 
 Conner Goodrum
 
@@ -22,7 +22,8 @@ Ship design is not only a complicated task, but it also has many complex nuances
 ### Main Micro-level Processes and Macro-level Dynamics of Interest
 ****
 
-_Short overview of the key processes and/or relationships you are interested in using your model to explore. Will likely be something regarding emergent behavior that arises from individual interactions_
+The key micro-leel processes are the negotiations between the agents. The agents will each be coded with different preferences in mind (for example greedy, lenient, adaptive) and a vote will be created and used to activite the fuzzy rule bank. The hope is that these micro-level negotiations produce vastly different design surfaces, with very different global optima. In this way, the interactions of the negotiations can be linked to the final converged design.
+
 
 &nbsp; 
 
@@ -49,6 +50,8 @@ _Description of the environment in your model. Things to specify *if they apply*
 &nbsp; 
 
 ### 2) Agents
+ 
+ The agents in the model have the following variables:
  
  _Description of the "agents" in the system. Things to specify *if they apply*:_
  
