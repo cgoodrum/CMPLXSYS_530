@@ -1,24 +1,22 @@
-# Model Proposal for _[Project Name]_
+# Model Proposal for Fuzzy Logic Design Optimization
 
-_Your Name_
+Conner Goodrum
 
 * Course ID: CMPLXSYS 530,
 * Course Title: Computer Modeling of Complex Systems
 * Term: Winter, 2017
 
 
-
 &nbsp; 
 
 ### Goal 
 *****
- 
-_Provide a short, 1-3 sentence description of the goal of your model_
+The goal of my model is to simulate the negotiation of design preferences using several design agents. These agents will all have different design preferences on a given function, and will make use of fuzzy logic to activate a set of fuzzy rules, which will translate the negotiated preferences to a preference surface which can be used for optimization. This hopefully will tie the negotiations of the agents to the optimized design point on a pareto front.
 
 &nbsp;  
 ### Justification
 ****
-_Short explanation on why you are using ABM_
+Ship design is not only a complicated task, but it also has many complex nuances which often lead to sub-optimal designs, and thus cost over runs. The large number of variables and disciplines to monitor in a design (such as structures, seakeeping, habitability, survivability, powering, maneuvering, etc) coupled with the numerous interacting systems means that throughout a single design there are many designers involved throughout the process. Each designer (or team of designers) will have their own set of goals and have their own idea of an optimal design (depending on which discipline they are designing), and thus the final product becomes a combination of all of them. Design and design processes have been studied in depth, but I would like to create an environment which allows these negotiations to be monitored and studied, and how they relate to the final 'optimal' design surface.
 
 &nbsp; 
 ### Main Micro-level Processes and Macro-level Dynamics of Interest
