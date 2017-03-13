@@ -8,7 +8,6 @@ Conner Goodrum
 
 
 &nbsp; 
-
 ### Goal 
 *****
 The goal of my model is to simulate the negotiation of design preferences using several design agents. These agents will all have different design preferences on a given function, and will make use of fuzzy logic to activate a set of fuzzy rules, which will translate the negotiated preferences to a preference surface which can be used for optimization. This hopefully will tie the negotiations of the agents to the optimized design point on a pareto front.
@@ -32,39 +31,27 @@ The key micro-leel processes are the negotiations between the agents. The agents
 ****
 &nbsp; 
 ### 1) Environment
-_Description of the environment in your model. Things to specify *if they apply*:_
+_Description of the environment in your model. Things to specify *if they apply*:
 
-* _Boundary conditions (e.g. wrapping, infinite, etc.)_
-* _Dimensionality (e.g. 1D, 2D, etc.)_
+* _Dimensionality (e.g. 1D, 2D, etc.): The environment will consist of 2D points (acting as patches) which contain a single function value at that point.
 * _List of environment-owned variables (e.g. resources, states, roughness)_
 * _List of environment-owned methods/procedures (e.g. resource production, state change, etc.)_
 
-
-```python
-# Include first pass of the code you are thinking of using to construct your environment
-# This may be a set of "patches-own" variables and a command in the "setup" procedure, a list, an array, or Class constructor
-# Feel free to include any patch methods/procedures you have. Filling in with pseudocode is ok! 
-# NOTE: If using Netlogo, remove "python" from the markdown at the top of this section to get a generic code block
-```
 
 &nbsp; 
 
 ### 2) Agents
  
- The agents in the model have the following variables:
+ The agents in the model have the following agent owned variables:
  
- _Description of the "agents" in the system. Things to specify *if they apply*:_
- 
-* _List of agent-owned variables (e.g. age, heading, ID, etc.)_
-* _List of agent-owned methods/procedures (e.g. move, consume, reproduce, die, etc.)_
+* _Type: The agent type, which will define which sort of agent it is (greedy, etc.)
+* _Interaction rules: Cases which define what happens when it meets an agent.
+* _
 
+The agents in the model have the following agent owned methods/procedures:
 
-```python
-# Include first pass of the code you are thinking of using to construct your agents
-# This may be a set of "turtle-own" variables and a command in the "setup" procedure, a list, an array, or Class constructor
-# Feel free to include any agent methods/procedures you have so far. Filling in with pseudocode is ok! 
-# NOTE: If using Netlogo, remove "python" from the markdown at the top of this section to get a generic code block
-```
+* Interact
+
 
 &nbsp; 
 
@@ -72,20 +59,25 @@ _Description of the environment in your model. Things to specify *if they apply*
  
 **_Interaction Topology_**
 
-_Description of the topology of who interacts with whom in the system. Perfectly mixed? Spatial proximity? Along a network? CA neighborhood?_
+The interaction topology here will not exist within a spatial-dependent environment. Instead, it will act more along the lines of a genetic algorithm type of interaction environment, where agents are chosen at random and interact with each other.
  
 **_Action Sequence_**
 
 _What does an agent, cell, etc. do on a given turn? Provide a step-by-step description of what happens on a given turn for each part of your model_
 
-1. Step 1
-2. Step 2
-3. Etc...
+1. 'n' number of agents are randomly selected from the population.
+2. Each agent interacts with the other selected agents, and cast their votes depending on their interaction rules.
+3. A vote is held between the selected agents.
+4. The winning of the vote determines how the preferences are updated for the next round (in the function and fuzy logic sets), as well as what the response surface looks like.
 
 &nbsp; 
 ### 4) Model Parameters and Initialization
 
-_Describe and list any global parameters you will be applying in your model._
+_Describe and list any global parameters you will be applying in your model:
+
+Number of agents: Defined by the number of each type of agent.
+Negotation
+Fuzzy rule matrix: This is a pre-defined method for the rules activated when the negotiations have ocurred.
 
 _Describe how your model will be initialized_
 
