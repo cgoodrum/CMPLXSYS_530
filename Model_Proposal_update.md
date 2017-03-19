@@ -7,6 +7,8 @@ Conner Goodrum
 * Term: Winter, 2017
 
 
+_**LS Comments:** I am leaving fewer comments within the proposal here than I am with others since we have met in person, and I am assuming that conversation supersedes a lot of what you have proposed here. If there is anything in particular you would like addressed or to get feedback in the below, however, just let me know._
+
 &nbsp; 
 ### Goal 
 *****
@@ -23,6 +25,7 @@ Ship design is not only a complicated task, but it also has many complex nuances
 
 The key micro-leel processes are the negotiations between the agents. The agents will each be coded with different preferences in mind (for example greedy, lenient, adaptive) and a vote will be created and used to activite the fuzzy rule bank. The hope is that these micro-level negotiations produce vastly different design surfaces, with very different global optima. In this way, the interactions of the negotiations can be linked to the final converged design.
 
+_**LS Comments:** Good overview here. A lot to potentially incorporate into the model at some point, so clarifying in your final writeup which parts of the above you are focusing on first would be good._
 
 &nbsp; 
 
@@ -42,6 +45,8 @@ The environment will contain the following methods/sequences:
 * calc_function val: Calculate the function value at the point specified.
 * update_design_surface: Calculate the design function surface at that point (after the voting procedure).
 
+_**LS Comments:** As discussed, I think that you might be able to think about this in a pretty aspatial way for the time being. In the future, however, I think there are some definite potentials for incorporating notions of a value surface into a more developed version of the model. Specifically, if you look at the "perspective" and "interpretation" landscapes described in Pages "The Difference", I think you will find a lot to draw on._
+
 
 &nbsp; 
 
@@ -54,7 +59,6 @@ The environment will contain the following methods/sequences:
 
 The agents in the model have the following agent owned methods/procedures:
 * Vote: Will contain that agent's vote and preferences.
-
 
 &nbsp; 
 
@@ -77,9 +81,11 @@ _What does an agent, cell, etc. do on a given turn? Provide a step-by-step descr
 This sequence is continued until every agent in the population has interacted with other agents and have casted a vote.
 
 &nbsp; 
+
+
 ### 4) Model Parameters and Initialization
 
-_Describe and list any global parameters you will be applying in your model:
+_Describe and list any global parameters you will be applying in your model:_
 
 Number of agents: Defined by the number of each type of agent.
 Negotation rules: The rules for how votes will be handled.
@@ -111,3 +117,9 @@ _What quantitative metrics and/or qualitative features will you use to assess yo
 _What parameters are you most interested in sweeping through? What value ranges do you expect to look at for your analysis?_
 
 Sweeping through different numbers (and ratios) of each type of agent present.
+
+
+&nbsp; 
+
+
+_**LS Comments:** Feel like we talked out a lot more of these details and potentially changes when we met last week, so hopefully that has been clarifying and helped you get a lot of this hammered out further. I am going to strongly advise that you get a first pass version of these ideas (and maybe more specifically, those we talked about when we met) coded up ASAP so you can start working out kinks in your code and figuring out the nitty-gritty specifics of how you are going to computationally implement these ideas for this initial model. I am expecting that you will most likely need to have at least a crude, initial version running by the end of this coming week to make sure that you have time to work out any bugs that come up and generate a set of modeling results to analyze and discuss by the time we get to the end of the semester._
